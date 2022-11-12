@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+       http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+	<include file="liquibase/20220917-160100-crate-table-users-roles.sql"/>
+	<include file="liquibase/20220917-161000-inicializacion-base-roles.sql"/>
+	<include file="liquibase/20221112-140000-add-tables-towns-provinces.sql"/>
+	<include file="liquibase/20221112-141000-add-provinces-towns.sql"/>
+	
+	
+
+</databaseChangeLog>
+
+
