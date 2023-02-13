@@ -12,6 +12,9 @@
 	<include file="liquibase/20220917-161000-inicializacion-base-roles.sql"/>
 	<include file="liquibase/20221112-140000-add-tables-towns-provinces.sql"/>
 	<include file="liquibase/20221112-141000-add-provinces-towns.sql"/>
+	<include file="liquibase/20221119-120000-add-user-test.sql"/>
+	<include file="liquibase/20221119-155100.add-tables-actor-movies.sql"/>
+	<include file="liquibase/20221119-173100-add-actors.sql"/>
 	
 	
 
