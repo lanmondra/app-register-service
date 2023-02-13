@@ -9,14 +9,17 @@
 		<version>2.7.4-SNAPSHOT</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.register</groupId>
 	<artifactId>REGISTER</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>app-register-service</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Proyect para registero de usuarios</description>
+
 	<properties>
 		<java.version>11</java.version>
 		<org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
+		<liquibase.propertyFile>${project.basedir}/src/main/resources/liquibase.properties</liquibase.propertyFile>
 	</properties>
 	<dependencies>
 
@@ -66,9 +69,15 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+
 
 		<!-- DEVTOOLS -->
 
@@ -138,6 +147,7 @@
 			<version>${org.mapstruct.version}</version>
 		</dependency>
 
+
 		<!-- JOSN -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -151,42 +161,43 @@
 			<version>20211205</version>
 		</dependency>
 
-
-
+		<!-- XML READ  -->
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.9.1</version>
+			<type>jar</type>
+		</dependency>
 
 
 
 	</dependencies>
 
 	<build>
-
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>org.liquibase</groupId>
-				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>3.10.0</version>
-				<configuration>
-					<propertyFile>${liquibase.propertyFile}</propertyFile>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.hibernate</groupId>
-						<artifactId>hibernate-core</artifactId>
-						<version>5.4.12.Final</version>
-					</dependency>
-					<dependency>
-						<groupId>javax.xml.bind</groupId>
-						<artifactId>jaxb-api</artifactId>
-						<version>2.3.1</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.liquibase</groupId>
+					<artifactId>liquibase-maven-plugin</artifactId>
+					<version>3.10.0</version>
+					<configuration>
+						<propertyFile>${liquibase.propertyFile}</propertyFile>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+							<version>5.4.12.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>javax.xml.bind</groupId>
+							<artifactId>jaxb-api</artifactId>
+							<version>2.3.1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<repositories>
 		<repository>
